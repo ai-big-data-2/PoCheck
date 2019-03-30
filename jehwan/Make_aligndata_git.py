@@ -12,6 +12,8 @@ import facenet
 import detect_face
 import random
 from time import sleep
+import preprocessing
+
 
 output_dir_path = './output/'
 output_dir = os.path.expanduser(output_dir_path)
@@ -94,8 +96,14 @@ with open(bounding_boxes_filename, "w") as text_file:
                         cropped_temp = img[bb_temp[1]:bb_temp[3], bb_temp[0]:bb_temp[2], :]
                         scaled_temp = misc.imresize(cropped_temp, (image_size, image_size), interp='bilinear')
 
+                        ###### image preprocessing ####
+
+                        result = preprocessing.dhe(scaled_temp)
+
+
+
                         nrof_successfully_aligned += 1
-                        misc.imsave(output_filename, scaled_temp)
+                        misc.imsave(output_filename, result)
                         text_file.write('%s %d %d %d %d\n' % (output_filename, bb_temp[0], bb_temp[1], bb_temp[2], bb_temp[3]))
                     else:
                         print('Unable to align "%s"' % image_path)

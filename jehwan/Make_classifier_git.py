@@ -21,6 +21,8 @@ with tf.Graph().as_default():
         datadir = './output/'
         dataset = facenet.get_dataset(datadir)
         paths, labels = facenet.get_image_paths_and_labels(dataset)
+        print(paths)
+        print(labels)
         print('Number of classes: %d' % len(dataset))
         print('Number of images: %d' % len(paths))
 
