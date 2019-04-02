@@ -1,3 +1,0 @@
-python Make_aligndata_git.py
-python Make_classifier_git.py
-python realtime_facenet_git.py
