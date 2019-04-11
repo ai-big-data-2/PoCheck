@@ -6,7 +6,7 @@
 2. chmod 755 [filename]
 3. ./filename
 
-## shell script 사용법
+## shell script
 >### cam.sh
 >>사진만 찍음
 >### crop_and_run.sh
