@@ -22,6 +22,8 @@ LIVENESS = False
 HD = False
 UNKNOWN_THRESHOLD = 0.28
 CHECK_POINT = 4
+WEB_SEND = False
+
 
 SET_FPS = 14
 SET_WIDTH = 1920
@@ -111,7 +113,8 @@ with tf.Graph().as_default():
             Human_hash[cls.name] = [False, 0]
             Human_count[cls.name] = 0
 
-        make_file(Human_hash)
+        if WEB_SEND:
+            make_file(Human_hash)
 
         print('Loading feature extractionodel')
         modeldir = '../parameter/20170511-185253/20170511-185253.pb'
